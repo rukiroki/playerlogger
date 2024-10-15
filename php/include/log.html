@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日志</title>
+</head>
+<style>
+    .down:hover {
+        cursor: pointer;
+    }
+    .down{
+        position: fixed;
+        background-color: rgba(0, 0, 0, 0.377);
+        height: 40px;
+        width: 40px;
+        right: 20px;
+        bottom:40px;
+        font-size: 40px;
+        line-height: 35px;
+    }
+    .searchbutton:hover {
+        cursor: pointer;
+    }
+    .searchbutton{
+        position: fixed;
+        background-color: rgba(0, 0, 0, 0.377);
+        height: 40px;
+        width: 40px;
+        right: 20px;
+        bottom:100px;
+        font-size: 40px;
+        line-height: 35px;
+    }
+    .search:hover {
+        cursor: pointer;
+    }
+    .search{
+        position: fixed;
+        background-color: rgba(0, 0, 0, 0.815);
+        width: 100%;
+        height: 0px;
+        padding: 0px;
+        top: 0px;
+        left: 0px;
+        /* width: 20px; */
+        overflow: hidden;
+        white-space: nowrap;
+        color: aliceblue;
+        padding-left: 5px;
+    }
+    input{
+        border: 1px solid white;
+        background-color: rgba(255, 255, 255, 0.438);
+        height: 20px;
+        margin-left: 10px;
+        margin-top: 2px;
+        margin-bottom: 2px;
+        width: 70%;
+        color: aliceblue;
+    }
+</style>
+<script src="location.js"></script>
+<script>
+function roll(){
+    document.body.scrollTo(0, document.body.scrollHeight);
+};
+function search(){
+    var inputs = document.querySelectorAll('#search input[type="text"]');
+    var inputValues = '';
+
+    // 遍历所有的input元素
+    for (var i = 0; i < inputs.length; i++) {
+        // 将每个input元素的值添加到数组中
+        if(inputs[i].value !== ""){
+            inputValues += inputs[i].value + "+";
+        }
+    }
+    inputValues = inputValues.slice(0, -1);
+    window.location.href = window.location.href + "&search="+inputValues;
+    // console.log(inputValues);
+}
+function searchbutton(){
+    if(document.getElementById("search").style.height === ""){
+        document.getElementById("search").style.height="0px"
+    }
+    if(document.getElementById("search").style.height === "0px"){
+        document.getElementById("search").style.height="auto";
+    }else{
+        document.getElementById("search").style.height="0px";
+    }
+}
+</script>
+<body>
+    <div class="searchbutton" onclick="searchbutton()">🔍︎</div>
+    <div class="down" onclick="roll()">▼</div>
+    <div class="search" id="search">
+        
+        关键词1<input type="text"><br>
+        关键词2<input type="text"><br>
+        关键词3<input type="text"><br>
+        关键词4<input type="text"><br>
+        <div style="float: right; background-color:  rgba(29, 146, 167, 0.658); margin-right: 20px;" onclick="search()">搜索</div>
+        请输入关键词，然后点击搜索--><br>
+    </div>
+</body>
+</html>
