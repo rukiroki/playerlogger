@@ -1,6 +1,6 @@
 export const locsname = {
     "出生点区块":["minecraft:overworld",-112,-64,127,143,320,-128],
-    "服主的房子":["minecraft:overworld",51,70,-14,76,88,-28],
+    /* "服主的房子":["minecraft:overworld",51,70,-14,76,88,-28],
     "人工村庄":["minecraft:overworld",43,75,-28,60,80,-61],
     "教堂建筑":["minecraft:overworld",17,67,24,-13,107,71],
     "图书馆":["minecraft:overworld",3,68,-7,-9,73,-35],
@@ -53,6 +53,6 @@ export const locsname = {
     "二层交通":["minecraft:nether",9,110,8,32,113,-12],
     "星光大道":["minecraft:nether",0,118,2,43,122,7]
 
-
+ */
 
 };
